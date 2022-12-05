@@ -22,7 +22,7 @@ function getCurrentWeather(city){
     console.log(data);
 
 /* Added variables for moment .js, and api to display each day of 5-day forecast date, icon, temp, and humidity */
-/* 1 */
+/* first day */
   let firstDay = moment().format("M/D/YYYY");
   let firstDayIcon = data.list[0].weather[0].icon;
   let firstDayImage = "https://openweathermap.org/img/wn/" + firstDayIcon + ".png";
@@ -43,7 +43,7 @@ function getCurrentWeather(city){
     $(".firstDay").append(FirstDayTempEl);
     $(".firstDay").append(FirstDayHumEl);
 
-/* 2 */
+/* second day */
   let secondDay = moment().add(1, "days").format("M/D/YYYY");
   let secondDayIcon = data.list[8].weather[0].icon;
   let secondDayImage = "https://openweathermap.org/img/wn/" + secondDayIcon + ".png";
@@ -64,7 +64,7 @@ function getCurrentWeather(city){
     $(".secondDay").append(secondDayTempEl);
     $(".secondDay").append(secondDayHumEl);
 
-/* 3 */
+/* third day*/
   let thirdDay = moment().add(2, "days").format("M/D/YYYY");
   let thirdDayIcon = data.list[16].weather[0].icon;
   let thirdDayImage = "https://openweathermap.org/img/wn/" + thirdDayIcon + ".png";
@@ -85,7 +85,7 @@ function getCurrentWeather(city){
     $(".thirdDay").append(thirdDayTempEl);
     $(".thirdDay").append(thirdDayHumEl);
 
-/* 4 */
+/* fourth day */
   let fourthDay = moment().add(3, "days").format("M/D/YYYY");
   let fourthDayIcon = data.list[24].weather[0].icon;
   let fourthDayImage = "https://openweathermap.org/img/wn/" + fourthDayIcon + ".png";
@@ -106,7 +106,7 @@ function getCurrentWeather(city){
     $(".fourthDay").append(fourthDayTempEl);
     $(".fourthDay").append(fourthDayHumEl);
 
-/* 5 */
+/* fifth day */
   let fifthDay = moment().add(4, "days").format("M/D/YYYY");
   let fifthDayIcon = data.list[32].weather[0].icon;
   let fifthDayImage = "https://openweathermap.org/img/wn/" + fifthDayIcon + ".png";
@@ -116,7 +116,7 @@ function getCurrentWeather(city){
   let fifthDayTempFixed = fifthDayTempFar.toFixed(1); 
   let fifthDayHum = data.list[32].main.humidity + "%";
 
-/* DISPLAY and APPEND FIFTH DAY DATA */
+
   let fifthDayDateEl = $("<p>").text(fifthDay);
   let fifthDayImageEl = $("<p>").text(fifthDayIcon);
   let fifthDayTempEl = $("<p>").text("Temp: " + fifthDayTemp);
@@ -129,7 +129,7 @@ function getCurrentWeather(city){
 
 })
 }
-/* Added moment.js for current day's date */
+
   let currentDate = moment().format('M/D/YYYY');
   let mainDate = document.getElementById('currentDay');
   date.innerHTML = currentDate;
